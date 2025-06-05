@@ -1,0 +1,447 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: grid;
+  gap: 50px;
+}
+
+h2 {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: "IBM Plex mono", sans-serif;
+  width: 100%;
+  background-color: #000028;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.header__rec {
+  position: absolute;
+  color: var(--main__color);
+  top: 10px;
+  right: 38px;
+  font-weight: var(--normal-weight);
+}
+
+.header__rec::after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  height: 9px;
+  width: 9px;
+  background: var(--main__color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--main__color);
+  bottom: 7px;
+  right: -20px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--main__color);
+  border-left: 0;
+  border-bottom: 0;
+  height: 25px;
+  width: 25px;
+  right: 10px;
+  top: 10px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--main__color);
+  border-right: 0;
+  border-top: 0;
+  height: 25px;
+  width: 25px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  color: var(--main__color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background: none;
+  outline: none;
+  border: none;
+  color: inherit;
+  width: 70px;
+  height: 26px;
+  font-size: var(--main-font-size);
+}
+
+.header__theme-menu-button:disabled {
+  border: 1px solid rgba(255, 0, 112, 1);
+}
+
+.header__theme-menu-button:not(:disabled):hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+  border: none;
+  border-bottom: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  padding: 10px;
+}
+
+.main__title {
+  grid-row: 2;
+}
+
+.title {
+  display: inline-block;
+  font-family: var(--main-font);
+  font-weight: var(--bold-weight);
+  color: var(--title-color);
+  font-size: var(--mobile-title-font-size);
+  text-shadow: 4px 4px 0 var(--main__color);
+  line-height: 83%;
+}
+
+.header__whatdo {
+  display: flex;
+  align-items: center;
+}
+
+.header__whatdo__block {
+  display: block;
+  grid-row: 3;
+  font-weight: var(--bold-weight);
+  padding: 0;
+  white-space: wrap;
+}
+
+.title-decor {
+  background-color: var(--main__color);
+  color: var(--accent-color);
+}
+
+.section {
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.section__subtitle {
+  margin-bottom: 10px;
+}
+
+.section__title {
+  color: var(--main__color);
+  font-weight: var(--bold-weight);
+  margin-bottom: 20px;
+}
+
+.container-info:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.section__text {
+  color: var(--text-color);
+  font-weight: var(--normal-weight);
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.focus-problems {
+  margin-top: -10px;
+}
+
+.focus-solutions__block {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title-focus-problems {
+  margin-top: -10px;
+}
+
+.focus-tips .container-info .section__subtitle {
+  font-weight: var(--normal-weight);
+}
+
+.title-tips {
+  font-weight: var(--bold-weight);
+  margin: 20px 0 20px;
+}
+
+.section-pictures {
+  display: grid;
+  gap: 10px;
+}
+
+.section-pictures-title {
+  margin-top: -2px;
+}
+
+.image_block {
+  display: grid;
+  gap: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  margin: 0;
+}
+
+.link__text {
+  text-shadow: 2px 2px 0 var(--main__color);
+}
+
+.link__text:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link__text:focus {
+  outline: 1px solid var(--text-color);
+}
+
+.footer {
+  margin-bottom: -60px;
+  margin-top: -60px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--main__color);
+  border-left: 0;
+  border-bottom: 0;
+  height: 25px;
+  width: 25px;
+  right: 10px;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--main__color);
+  border-right: 0;
+  border-top: 0;
+  height: 25px;
+  width: 25px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.footer__title {
+  margin-top: 85px;
+}
+
+@media (width >= 768px) {
+  .main__title__text {
+    margin-left: -20px;
+  }
+
+  .title {
+    font-size: var(--desktop-title-font-size);
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__rec {
+    right: 48px;
+    top: 20px;
+  }
+
+  .header__whatdo {
+    justify-self: end;
+    width: 50%;
+  }
+
+  .main {
+    gap: 80px;
+    padding: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .focus-tips {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .title-tips {
+    margin: 0;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  .focus-tips .container-info {
+    margin-left: 13px;
+  }
+
+  .focus-tips .container-info .section__subtitle {
+    font-weight: var(--normal-weight);
+  }
+
+  .focus-problems {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 10px;
+  }
+
+  .focus-problems .container-info {
+    margin-left: 13px;
+  }
+
+  .section__title-focus-problems {
+    margin-top: 0;
+    width: 210px;
+  }
+
+  .focus-solutions .section__subtitle {
+    font-weight: var(--bold-weight);
+  }
+
+  .focus-solutions__title {
+    width: 200px;
+  }
+
+  .focus-solutions__block {
+    gap: 20px;
+  }
+
+  .section__title {
+    grid-column: 1;
+  }
+
+  .container-info {
+    grid-column: 2;
+  }
+
+  .section-pictures-title {
+    margin-top: -3px;
+    margin-bottom: 10px;
+  }
+
+  .image_block {
+    gap: 20px;
+  }
+
+  .image {
+    height: 100%;
+  }
+
+  .sunset {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .ice-cream {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .tape {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  .books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .street {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
+
+  .footer {
+    margin-bottom: -50px;
+    margin-top: -50px;
+  }
+
+  .footer__title {
+    margin-top: 121px;
+  }
+}
+
+@media (width >= 1024px) {
+  .main__title__text {
+    font-size: var(--desktop-title-font-size);
+  }
+
+  .header__theme-menu {
+    display: flex;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .section__title-focus-problems {
+    width: 300px;
+  }
+
+  .focus-solutions__title {
+    width: 300px;
+  }
+
+  .focus-solutions__block {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+  }
+
+  .focus-problems .container-info {
+    margin-left: 5px;
+  }
+
+  .focus-tips .container-info {
+    margin-left: 5px;
+  }
+}
