@@ -1,11 +1,19 @@
 :root {
-  --mobile-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --desktop-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --main-font: 'IBM Plex mono';
+  --light__main__color:rgba(255, 141, 203, 1);
+  --light__bg-color: rgba(255, 241, 247, 1);
+  --light__title-color:  rgba(255, 194, 230, 1);
+  --light__text-color: rgba(53, 52, 48, 1);
+  --light__bg-image: url(../images/cover-image-light.png);
+  
   --main__color: rgba(255, 0, 112, 1);
   --title-color: rgba(219, 0, 255, 1);
   --text-color:rgba(241, 178, 206, 1);
-  --accent-color: rgba(0, 0, 40, 1);
+  --accent-color: #000028;
+
+
+  --main-font: 'IBM Plex mono';
+  --mobile-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --desktop-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --main-font-size: 18px;
   --normal-weight: 400;
   --bold-weight: 700;
