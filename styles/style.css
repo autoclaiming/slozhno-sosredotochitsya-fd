@@ -3,11 +3,11 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
-  gap: 50px;
+  gap: 30px;
   width: 100%;
-  font-family: var(--main-font), sans-serif;
-  background-color: var(--accent-color);
-  background-image: url(../images/cover-image-dark.png);
+  font-family: var(--main-font), monospace;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -15,14 +15,15 @@
   
 }
 
-h2 {
+h2,h3 {
   font-size: var(--main-font-size);
 }
 
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  min-height: 100vh;
+  min-height: 500px;
+  height: 100vh;
   padding: 10px;
 }
 
@@ -32,6 +33,18 @@ h2 {
   top: 10px;
   right: 38px;
   font-weight: var(--normal-weight);
+}
+
+.theme-light .header__rec {
+  display: none;
+}
+
+.theme-light .header__rec::before {
+  display: none;
+}
+
+.theme-light .header__rec::after{
+  display: none;
 }
 
 .header__rec::after {
@@ -47,7 +60,7 @@ h2 {
   right: -20px;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   border: 1px solid var(--main__color);
@@ -59,7 +72,7 @@ h2 {
   top: 10px;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   border: 1px solid var(--main__color);
@@ -69,6 +82,14 @@ h2 {
   width: 25px;
   bottom: 10px;
   left: 10px;
+}
+
+.theme-light .decorated-zone::after{
+  display: none;
+}
+
+.theme-light .decorated-zone::before{
+  display: none;
 }
 
 .header__theme-menu {
@@ -88,23 +109,24 @@ h2 {
   background: none;
   outline: none;
   border: none;
-  color: inherit;
+  color: var(--button__color);
   width: 70px;
   height: 26px;
   font-size: var(--main-font-size);
+  cursor: pointer;
 }
 
 .header__theme-menu-button:disabled {
-  border: 1px solid rgba(255, 0, 112, 1);
+  border: 1px solid var(--focus-color);
 }
 
 .header__theme-menu-button:not(:disabled):hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid var(--hover-color_light);
 }
 
 .header__theme-menu-button:focus-visible {
   border: none;
-  border-bottom: 1px solid rgba(255, 0, 112, 0.4);
+  border-bottom: 1px solid var(--focus-color);
 }
 
 .main {
@@ -140,13 +162,18 @@ h2 {
   white-space: wrap;
 }
 
+.header__whatdo__text {
+  color: var(--what_do-color);
+  font-size: var(--main-font-size);
+}
+
 .title-decor {
   background-color: var(--main__color);
-  color: var(--accent-color);
+  color: var(--bg-color);
 }
 
 .section {
-  font-size: 18px;
+  font-size: var(--main-font-size);
   line-height: 23.4px;
 }
 
@@ -175,7 +202,7 @@ h2 {
 }
 
 .focus-problems {
-  margin-top: -10px;
+
 }
 
 .focus-solutions__block {
@@ -184,10 +211,9 @@ h2 {
 }
 
 .section__title-focus-problems {
-  margin-top: -10px;
 }
 
-.focus-tips .container-info .section__subtitle {
+.focus-tips .section__subtitle {
   font-weight: var(--normal-weight);
 }
 
@@ -202,7 +228,6 @@ h2 {
 }
 
 .section-pictures-title {
-  margin-top: -2px;
 }
 
 .image_block {
@@ -212,14 +237,17 @@ h2 {
 
 .footer {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
+  min-height: 500px;
   height: 100vh;
   padding: 10px;
   margin: 0;
 }
 
 .link__text {
+  text-decoration: none;
   text-shadow: 2px 2px 0 var(--main__color);
 }
 
@@ -229,12 +257,6 @@ h2 {
 
 .link__text:focus {
   outline: 1px solid var(--text-color);
-}
-
-.footer {
-  position: relative;
-  margin-bottom: -60px;
-  margin-top: -60px;
 }
 
 .footer::before {
@@ -267,8 +289,12 @@ h2 {
 }
 
 @media (width >= 768px) {
-  .main__title__text {
-    margin-left: -20px;
+  .page {
+    gap: 50px;
+  }
+
+  .main__title__text { 
+    margin-left: -20px; 
   }
 
   .title {
@@ -361,7 +387,6 @@ h2 {
   }
 
   .section-pictures-title {
-    margin-top: -3px;
     margin-bottom: 10px;
   }
 
@@ -425,7 +450,8 @@ h2 {
   }
 
   .section__title-focus-problems {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
   }
 
   .focus-solutions__title {
@@ -446,3 +472,4 @@ h2 {
     margin-left: 5px;
   }
 }
+
