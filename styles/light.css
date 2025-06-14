@@ -10,7 +10,8 @@
   --text-color: rgba(53, 52, 48, 1);
   --button__color: rgba(53, 52, 48, 1);
   
-  --what_do-color: rgba(53, 52, 48, 1);
+  --subtitle_text_color: rgba(53, 52, 48, 1);
+  --decor-text_color: rgba(53, 52, 48, 1);
   --bg-color: rgba(255, 241, 247, 1);
   --bg-image: url(../images/cover-image-light.png);
   --hover-color_light: rgba(50, 49, 45, 0.4);
@@ -25,12 +26,22 @@
   --text-color: rgba(53, 52, 48, 1);
   --button__color: rgba(53, 52, 48, 1);
   
-  --what_do-color: rgba(53, 52, 48, 1);
+  --subtitle_text_color: rgba(53, 52, 48, 1);
+  --decor-text_color: rgba(53, 52, 48, 1);
+  --decorated-zone-color: rgba(53, 52, 48, 1);
   --bg-color: rgba(255, 241, 247, 1);
   --bg-image: url(../images/cover-image-light.png);
   --hover-color_light: rgba(50, 49, 45, 0.4);
   --focus-color: rgba(50, 49, 45, 1);
   }
+
+  .header__rec {
+    display: none;
+  }
+}
+
+.theme-light .header__rec {
+  display: none;
 }
 
 .theme-light .page {
